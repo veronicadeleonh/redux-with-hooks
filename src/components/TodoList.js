@@ -12,17 +12,22 @@ const TodoList = () => {
 
     return (
         <ul className="todo-list">
-            {todos.map(todo => (
-                <li key={todo.Id}>
-                <input type="checkbox"
-                    checked={todo.complete} // boolean
-                    onChange={toggleTodo.bind(null, todo.Id)} 
-                    />
-                    <span className={todo.complete ? "complete" : null}>{todo.name}</span>
-                    <span className="delete-button" onClick={deleteTodo.bind(null, todo.Id)}>X</span>
-                </li>
-            ))}
-        </ul>
+      {todos.map((todo) => (
+        <li key={todo.id}>
+          <input
+            type="checkbox"
+            checked={todo.complete}
+            onChange={toggleTodo.bind(null, todo.id)}
+          />
+          <span className={todo.complete ? 'complete' : null}>{todo.name}</span>
+          <span className="delete-button"
+            onClick={deleteTodo.bind(null, todo.id)}
+          >
+            X
+          </span>
+        </li>
+      ))}
+    </ul>
     )
 }
 
